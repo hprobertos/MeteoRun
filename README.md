@@ -1,5 +1,6 @@
 # MeteoRun
 Javascript/HTML videogame as a school project
+![Image](https://hprobertos.github.io/images/pic1.jpg)
 
 I do not own most of the content used in this project like: 
 * Music 
