@@ -18,10 +18,8 @@ It´s pretty simple, you just need a mouse and keyboard (Only used to write down
 ## Powerups
 There are powerups that increases lives, increases points or reduces hits. Which powerups do this? Well it´s up to you to figure it out. 
 
-You have all rights to use it as you wish, but I will be so grateful if you credit me for my hard work. Have fun!
-
 ## Compatibility 
 This game was developed to run in Chrome navigator, it may run in other navigators such as Firefox or Edge, but it´s not recommend it.
 
 ## Credit
-This project can be used to inspire others and can be used for other purposes, with no cost or permisson needed, I only ask for a mention as the original creator. 
+You have all rights to use it as you wish, but I will be so grateful if you credit me for my hard work. Have fun!
