@@ -1,5 +1,5 @@
 # MeteoRun
-Javascript/HTML videogame as a school project
+Javascript/HTML videogame as a cs50 2021 final project.
 ![Image](https://hprobertos.github.io/images/pic1.jpg)
 
 I do not own most of the content used in this project like: 
