@@ -38,7 +38,14 @@ var difficulty_bonus;
 
 var meteors= []; 				
 var firstClick = false;
-var actual_song = 0; 					
+var actual_song = 0; 	
+
+var powerUp = {
+	name: '',
+	time: 0,
+	color: '',
+	enabled: false
+};
 
 var difficulty_text= [
 	"Noob",
@@ -161,28 +168,49 @@ function initUpdates(){
 
 				if((mouse.x-user_size <= (meteor.x+meteor.radious-(meteor.radious/10)) && mouse.x+user_size >= meteor.x-meteor.radious+(meteor.radious/10)) && 
 					(mouse.y-user_size <= (meteor.y+meteor.radious-(meteor.radious/10)) && mouse.y+user_size >= meteor.y-meteor.radious+(meteor.radious/10))){
+					// Score
+					ctx.textAlign = "center";
 					if(meteor.id == 0){
+						powerUp.time = 15;
+						powerUp.name = "2x Score"
+						powerUp.color = "#3AAF29";
+						powerUp.enabled = true;
 						if(soundOp){
 							var songPlay = document.getElementById("SFXGood");
 							songPlay.play();
 						}
 						score+=(5*power_probability);
 					}
+					// Lives
 					else if(meteor.id == 1){
+						powerUp.time = 15;
+						powerUp.name = "+1 Live"
+						powerUp.color = "#3AAF29";
+						powerUp.enabled = true;
 						if(soundOp){
 							var songPlay = document.getElementById("SFXGood");
 							songPlay.play();
 						}
 						number_of_lives++;
 					}
+					// Hits
 					else if(meteor.id == 2){
+						powerUp.time = 15;
+						powerUp.name = "Hit reset"
+						powerUp.color = "#3AAF29";
+						powerUp.enabled = true;
 						if(soundOp){
 							var songPlay = document.getElementById("SFXGood");
 							songPlay.play();
 						}
 						number_of_hits=0;
 					}
+					// Damage
 					else if(meteor.id == 3){
+						powerUp.time = 15;
+						powerUp.name = "-1 Live"
+						powerUp.color = "#9b0007";
+						powerUp.enabled = true;
 						damage = true;
 						if(soundOp){
 							var songPlay = document.getElementById("SFXBad");
@@ -212,6 +240,17 @@ function initUpdates(){
 			ctx.fillText("Lives: "+number_of_lives, 65, 60);
 			ctx.fillText("Score: "+score.toFixed(0), 65, 90);
 
+			if(powerUp.enabled) {
+				// Paint label
+				fontSize = 25-powerUp.time;
+				ctx.font = fontSize+"px Arial";
+				ctx.fillStyle = powerUp.color;
+				ctx.fillText(powerUp.name, mouse.x, mouse.y-30);
+
+				if(!powerUp.time--) {
+					powerUp.enabled = false;
+				}
+			}
 			// If user leaves screen
 			if(mouse.x-user_size>=canvas.width || mouse.y+user_size<=0 || 
 				mouse.y-user_size>=canvas.height || mouse.y+user_size<=0)

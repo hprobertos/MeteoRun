@@ -23,3 +23,27 @@ This game was developed to run in Chrome navigator, it may run in other navigato
 
 ## Credit
 You have all rights to use it as you wish, but I will be so grateful if you credit me for my hard work. Have fun!
+
+Images from: 
+    - Pixabay with free copyright
+
+Code from: 
+    - Bootstrap with MIT License
+    - Federico Zivolo with MIT License
+Music from: 
+    - TeknoAXE's Royalry Free Music
+    - The Sounds of Silence - Paul Simon
+
+Sound Effects from:
+    - Pixabay with free copyright
+
+List of TeknoAXE's songs used:
+    - Running on Air
+    - Jonathon Davis Disco
+    - Phased Glory
+    - USO Showdown
+    - Tribute to The GlitchMob
+    - Evading the enemy
+    - Mars Incorporated
+    - Base Chase Theme Song
+    - Six String Shrapnel
