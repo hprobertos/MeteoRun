@@ -341,13 +341,6 @@ function newRecord(){
 
 	var data="";
 	username = "";
-	/*ctx.clearRect(0,0, canvas.width, canvas.height);
-	console.log("New Record!!!");
-
-	ctx.font = "35px Arial";
-	ctx.fillText("New Record!!!", canvas.width/2, 100);
-	ctx.font = "30px Arial";*/
-
 	$('#myModal').modal('show', function (event){});
 }
 
@@ -402,7 +395,7 @@ function startGame(difPar){
 	document.getElementById('none').style.cursor = "none";
 
 	// Creates meteors
-	for(let i=0; i<difficulty[actual_difficulty].cantidadInicial; i++){
+	for(let i=0; i<difficulty[actual_difficulty].initialQuantity; i++){
 		createCircle();
 	}
 
@@ -618,8 +611,6 @@ function selectConfig(){
 
 	ctx.textAlign = "left";
 	ctx.strokeStyle = "#FFF";
-	//ctx.fillText("Sounds: ", canvas.width/2-(canvas.width/2-60), 285);
-	//ctx.strokeRect(canvas.width/2-(canvas.width/2-220), 250, 100, 50);
 	ctx.textAlign = "center";
 	if(soundOp)	
 		ctx.fillText("On", canvas.width/2-400, 440);
@@ -644,7 +635,6 @@ function selectConfig(){
 
 	ctx.textAlign = "left";
 	ctx.strokeStyle = "#FFF";
-	//ctx.fillText("Background: ", canvas.width/2-(canvas.width/2-60), 385);
 
 	// PLAYER COLOR
 	ctx.fillStyle = "#2497c1";
@@ -663,7 +653,6 @@ function selectConfig(){
 	ctx.fillText("layer color:", canvas.width/2-455, canvas.height/2+183);
 
 	ctx.strokeStyle = "#FFF";
-	//ctx.fillText("Player color: ", canvas.width/2-(canvas.width/2-60), 485);
 
 	ctx.beginPath();
 	ctx.arc(canvas.width/2-300, 640, 20, 0, Math.PI*2, false);
@@ -867,11 +856,9 @@ function Menu(){
 
 	// Cleans screen
 	ctx.fillStyle = "#000";
-	//ctx.clearRect(0,0, canvas.width, canvas.height);
 
 	var img = new Image();
 	img.src = backgrounds[defaultBG];
-	//img.onload = function(){
 	ctx.drawImage(img, 0, 0, canvas.width+100, canvas.height+100);
 
 	ctx.font = "100px Magneto";
@@ -964,7 +951,6 @@ function StartMenu(){
 
 	// Clean Screen
 	ctx.fillStyle = "#000";
-	//ctx.clearRect(0,0, canvas.width, canvas.height);
 
 	var img = new Image();
 	img.src = backgrounds[defaultBG];
@@ -1032,7 +1018,6 @@ function init(){
 	})
 
 	var JSON_obj = JSON.stringify(1);
-	// isStorage && localStorage.setItem("first-time", JSON_obj);
 	
 	// Updates scores and accepts inputs
 	getConfigs();
@@ -1043,20 +1028,11 @@ function init(){
 	if(!localStorage.getItem('high-scores')) {
 		setDefaultScores();
 	}
-	// else{
-	// 	console.log(localStorage);
-	// 	var JSON_obj = JSON.stringify(1);
-	// 	isStorage && localStorage.setItem("first-time", JSON_obj);
-
-		// Runs main menu
-	// 	Menu();
-	// }
 
 	// Runs Main Menu
 	StartMenu();
 	//Menu();
 }
-
 
 
 /*********************************** Uploads windows ***********************************/

@@ -1,6 +1,6 @@
 
 
-// Lista de objetos
+// List of objects
 var objArray = [
 	"P1.png",
 	"P2.png",
@@ -9,7 +9,7 @@ var objArray = [
 
 var entities = [];
 
-/*****************************  FUNCION QUE DIBUJA UN METEORO  **********************************/
+/*****************************  DRAW METEOR  **********************************/
 function Meteoro(x, y, radious, color, velX, velY, id){
 	this.x = x;
 	this.y = y;
@@ -87,7 +87,7 @@ function Meteoro(x, y, radious, color, velX, velY, id){
 	}
 }
 
-/*****************************  FUNCIONS QUE DAN NÚMEROS ALEATORIOS  **********************************/
+/*****************************  RANDOM VALUES  **********************************/
 function getRandomVelX(angle,speed){
 	//return -(Math.random()+.1)*.9;
 	return Math.sin(angle) * speed;
@@ -106,9 +106,8 @@ function getRandomPointY(intervalo) {
 	return Math.random()*-50;
 }
 
-/******************************* FUNCIONES DE COLORES ALEATORIOS *****************************/
+/******************************* RANDOM COLORS *****************************/
 function getRandomColor(){
-	//var intervalo = colores.length;
 	var pos = Math.random();
 	if(pos>=.01)
 		pos=0;
@@ -118,7 +117,7 @@ function getRandomColor(){
 	return colores[index];	
 }
 
-/********************************  FUNCION DE CREAR METEORO  **********************************/
+/********************************  CREATE METEOR  **********************************/
 function createCircle(){
 	var angle = Math.random() * Math.PI - (Math.PI * 0.5);
 	var speed = (Math.random()+.2) * power_speed;
@@ -131,9 +130,7 @@ function createCircle(){
 
 	var id = 0;
 	var rand = Math.random();
-	//console.log(rand);
-	
-	// .05
+
 	if(rand < power_probability){
 		var c = new Meteoro(random_x, random_y, power_size, "#050047", random_speed_x, random_speed_y, id);
 		meteors.push(c);
@@ -146,7 +143,6 @@ function createCircle(){
 		meteors.push(c);
 		c.draw();
 	}
-
 
 	else if(rand > (.8 + power_probability) && rand < (.85 + power_probability)){
 		id = 2;
@@ -165,7 +161,6 @@ function createCircle(){
 	}
 }
 
-// stars
 function Star(options){
 	this.size = Math.random()*4;
 	this.speed = Math.random()*1.5;
@@ -199,6 +194,7 @@ Star.prototype.update = function(){
 		this.len = (Math.random()*80)+10;
 		this.speed = (Math.random()*10)+6;
 		this.size = (Math.random()*1)+0.1;
+
     // this is used so the shooting stars arent constant
 		this.waitTime =  new Date().getTime() + (Math.random()*3000)+500;
 		this.active = false;

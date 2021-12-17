@@ -1,7 +1,7 @@
 // Difficulties
 var difficulty= [
 	{difficulty_id: 0,
-	cantidadInicial: 10,
+	initialQuantity: 10,
 	lives: 5,
 	pRadio: 20,
 	mRadio: 10,
@@ -13,7 +13,7 @@ var difficulty= [
 	multi: .1},
 
 	{difficulty_id: 1,
-	cantidadInicial: 20,
+	initialQuantity: 20,
 	lives: 3,
 	pRadio: 15,
 	mRadio: 15,
@@ -25,7 +25,7 @@ var difficulty= [
 	multi: .3},
 
 	{difficulty_id: 2,
-	cantidadInicial: 25,
+	initialQuantity: 25,
 	lives: 2,
 	pRadio: 10,
 	mRadio: 20,
@@ -37,7 +37,7 @@ var difficulty= [
 	multi: .5},
 
 	{difficulty_id: 3,
-	cantidadInicial: 30,
+	initialQuantity: 30,
 	lives: 1,
 	pRadio: 8,
 	mRadio: 23,
@@ -66,7 +66,6 @@ var idColor = 0;
 var username="Player";
 
 function getConfigs(){
-	// if(localStorage.getItem('first-time')){
 	if (isStorage && localStorage.getItem('high-scores')){
 		var JSON_obj = localStorage.getItem('high-scores').split(',');
 		ScoresDB = JSON.parse(JSON_obj);
@@ -74,7 +73,6 @@ function getConfigs(){
 		ScoresDB = ScoresDB.reverse();
 		if(ScoresDB.length > 5){
 			ScoresDB = ScoresDB.slice(0,5);
-			//console.log(ScoresDB);
 		}
 	}
 
@@ -97,15 +95,6 @@ function getConfigs(){
 		var JSON_obj = localStorage.getItem('bg-op');
 		defaultBG = JSON.parse(JSON_obj);
 	}
-	// // }
-	// else{
-	// 	setDefaultScores();
-	// 	defaultBG = 0;
-	// 	musicOp = true;
-	// 	soundOp = true;
-	// 	idColor = 0;
-	// 	username = "Player";
-	// }
 }
 
 function ScoreText(score, difficulty, user, date){
