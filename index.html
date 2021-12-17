@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Things that don't matter right now -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<!-- Title -->
+		<title>MeteoRun</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="shortcut icon" type="image/x-icon" href="Src/game.ico">
+		<link href="Styles/canvas.css" rel="stylesheet">
+		<link href="Styles/modal.css" rel="stylesheet">
+	</head>
+
+	<body id="none">
+		<audio id="SFXGood">
+			<source src="Src/SFXGood.mp3" type="audio/ogg">
+		</audio>
+		<audio id="SFXGameOver" loop>
+			<source src="Src/SFXGameOver.mp3" type="audio/ogg">
+		</audio>
+		<audio id="SFXBad">
+			<source src="Src/SFXBad.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXGamePlay0_0" loop name="songs0">
+			<source src="Src/SFXGamePlay0_0.mp3" type="audio/ogg">
+		</audio>
+		<audio id="SFXGamePlay0_1" loop name="songs0">
+			<source src="Src/SFXGamePlay0_1.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXGamePlay1_0" loop name="songs1">
+			<source src="Src/SFXGamePlay1_0.mp3" type="audio/ogg">
+		</audio>
+		<audio id="SFXGamePlay1_1" loop name="songs1">
+			<source src="Src/SFXGamePlay1_1.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXGamePlay2_0" loop name="songs2">
+			<source src="Src/SFXGamePlay2_0.mp3" type="audio/ogg">
+		</audio>
+		<audio id="SFXGamePlay2_1" loop name="songs2">
+			<source src="Src/SFXGamePlay2_1.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXGamePlay3_0" loop name="songs3">
+			<source src="Src/SFXGamePlay3_0.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXGamePlay3_1" loop name="songs3">
+			<source src="Src/SFXGamePlay3_1.mp3" type="audio/ogg">
+		</audio>
+
+		<audio id="SFXMainMenu" loop>
+			<source src="Src/SFXMainMenu.mp3" type="audio/ogg">
+		</audio>
+
+
+
+		<div >
+			<canvas contenteditable="false" id="my-canvas"></canvas>
+		</div>
+
+		<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+			<div class="modal-header">
+				<h5 class="modal-title">New Record!</h5>
+			</div>
+
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="InputUsername">Please type your name:</label>
+					<input type="text" class="form-control" id="InputUsername"
+					aria-describeby="inputHelp" placeholder="Enter username...">
+					<small id="inputHelp" class="form-text text-muted">No more than 10 characters</small>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="buttonAccept" data-dismiss="modal">
+					Accept</button>
+			</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- Javascript Files -->
+		<script src="Scripts/canvas.js"></script>
+		<script src="Scripts/objects.js"></script>
+		<script src="Scripts/player.js"></script>
+		<script src="Scripts/config.js"></script>
+		<script src="Scripts/secrets.js"></script>
+		<script src="Scripts/jquery.js"></script>
+    	<script src="Scripts/popper.js"></script>
+    	<script src="Scripts/bootstrap.js"></script>
+		</body>
+</html>
